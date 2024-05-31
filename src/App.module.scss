@@ -1,0 +1,10 @@
+.appContainer {
+  display: flex;
+  background-color: black;
+  height: 100vh;
+
+  .renderChild {
+    // height: 100vh;
+    // padding-top: 40px;
+  }
+}

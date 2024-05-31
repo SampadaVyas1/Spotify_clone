@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import styles from "./App.module.scss";
+import SideNavBar from "./component/SideNavBar/SideNavBar";
+import ForYou from "./views/ForYou/ForYou";
+import AppContext from "./context/appcontext";
 
 function App() {
+  const [renderChild, setRenderChild] = useState<React.ReactNode>(<ForYou />);
+  const handleListIemOnclick = (value: string, customNode: React.ReactNode) => {
+    setRenderChild(customNode);
+  };
+
+  const getPlayListData = async () => {
+    const url =
+      "https://www.discogs.com/service/header/public/api/autocomplete";
+
+    try {
+      const response = await fetch(url);
+      const result = await response.text();
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getPlayListData();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext>
+      <div className={styles.appContainer}>
+        <SideNavBar handleListIemOnclick={handleListIemOnclick} />
+        <div className={styles.renderChild}>{renderChild}</div>
+      </div>
+    </AppContext>
   );
 }
 

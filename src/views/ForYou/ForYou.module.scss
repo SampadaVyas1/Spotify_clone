@@ -1,0 +1,23 @@
+.forYouContainer {
+  background-color: black;
+  display: flex;
+  .listSection {
+    padding-top: 40px;
+  }
+  .title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    color: white;
+    padding-bottom: 24px;
+    padding-left: 20px;
+  }
+  .searchContainer {
+    margin-bottom: 24px;
+    margin-left: 20px;
+  }
+  .musicPlayerContainer {
+    padding: 93px 157px;
+    padding-top: 53px;
+  }
+}

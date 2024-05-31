@@ -1,0 +1,33 @@
+.musicList {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 34rem;
+  .listWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .imageTextWrapper {
+      display: flex;
+      gap: 1rem;
+      .image {
+        border-radius: 56px;
+        object-fit: cover;
+      }
+    }
+    .title {
+      font-size: 400;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    .subTitle {
+      font-size: 400;
+      font-size: 14px;
+      line-height: 24px;
+      color: #a29f9b;
+    }
+  }
+}

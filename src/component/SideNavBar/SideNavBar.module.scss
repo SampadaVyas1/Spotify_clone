@@ -1,0 +1,27 @@
+.navBarContainer {
+  padding: 32px;
+  background-color: black;
+  color: white;
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  position: relative;
+  padding-right: 96px;
+  .spotifyIconContainer {
+    padding-bottom: 28px;
+  }
+  .listOfItems {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    .title {
+      font-size: 400;
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+  .profileImageContainer {
+    position: absolute;
+    bottom: 32px;
+  }
+}
